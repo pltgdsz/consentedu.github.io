@@ -21,34 +21,38 @@ body {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 0px 50px;
+    padding: 15px 20px;
     position: sticky; 
     top: 0;
     z-index: 1000;
     /* Ajout d'une ombre légère pour le relief */
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .navbar h1 {
     color: white;
-    font-size: 30px;
+    font-size: clamp(20px, 5vw, 30px);
 }
 
 .navlink {
     display: flex; 
     list-style: none; 
-    padding: 30px;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .navlink li {
-    padding-left: 100px;
+    padding-left: 0;
 }
 
 .navlink a {
     color: #e0e0e0;
     text-decoration: none;
     transition: color 0.4s;
-    font-size: 22px;
+    font-size: clamp(14px, 3vw, 18px);
 }
 
 .navlink a:hover {
@@ -58,38 +62,39 @@ body {
 
 /* --- TITRES ET CONTENU PRINCIPAL --- */
 #h1 {
-    font-size: 50px;
+    font-size: clamp(28px, 8vw, 50px);
     /* Un bleu marine élégant */
     color: #1a3a5f; 
-    margin: 50px;
+    margin: clamp(20px, 5vw, 50px);
 }
 
 /* Page Définitions */
 .definition {
     /* Texte en bleu canard sur fond bleu-gris très clair */
     color: #2c7a7b;
-    font-size: 30px;
-    padding: 30px;
-    margin: 50px 30px;
+    font-size: clamp(18px, 5vw, 30px);
+    padding: clamp(15px, 5vw, 30px);
+    margin: clamp(20px, 5vw, 50px);
     background-color: #edf2f7; 
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     border-radius: 15px;
     /* Une bordure subtile pour définir le bloc */
     border-left: 8px solid #1a3a5f; 
 }
 
 .consentement {
-    margin-left: 50px;
+    margin-left: clamp(20px, 5vw, 50px);
 }
 
 .consentement h2 {
-    font-size: 40px;
+    font-size: clamp(24px, 6vw, 40px);
     /* Bleu canard pour les titres de sections */
     color: #2c7a7b; 
 }
 
 .consentement p {
-    font-size: 22px;
+    font-size: clamp(16px, 4vw, 22px);
     margin-top: 10px;
     /* Gris foncé pour une meilleure lecture */
     color: #4a5568; 
@@ -143,7 +148,7 @@ body {
 
 .article-loi blockquote {
     font-style: italic;
-    font-size: 24px;
+    font-size: clamp(16px, 4vw, 24px);
     color: #1a3a5f;
     margin-bottom: 15px;
     line-height: 1.4;
@@ -157,14 +162,14 @@ body {
 
 .legal-section h3 {
     color: #2c7a7b;
-    font-size: 28px;
+    font-size: clamp(20px, 5vw, 28px);
     margin-bottom: 15px;
     border-bottom: 2px solid #edf2f7;
     padding-bottom: 5px;
 }
 
 .legal-section p {
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     line-height: 1.6;
     color: #4a5568;
     margin-bottom: 10px;
@@ -181,19 +186,22 @@ body {
 
 .container {
     display: flex;
-    gap: 120px;
+    gap: clamp(20px, 5vw, 120px);
+    flex-wrap: wrap;
+    padding: clamp(10px, 3vw, 20px);
 }
 
 .box {
-    width: 50%;
+    flex: 1;
+    min-width: 280px;
 }
 
 .chiffre li {
     list-style: none;
-    margin: 50px;
-    font-size: 30px;
+    margin: clamp(15px, 5vw, 50px);
+    font-size: clamp(18px, 5vw, 30px);
     background-color: #edf2f7;
-    padding: 15px;
+    padding: clamp(10px, 3vw, 15px);
     border-radius: 15px;
     border: 3px solid #1a3a5f;
 }
@@ -204,8 +212,8 @@ body {
 /* Conteneur principal de la page contact */
 .contact {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 40px;
+    margin: clamp(20px, 5vw, 40px) auto;
+    padding: clamp(20px, 5vw, 40px);
     background-color: white;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     border-radius: 20px;
@@ -213,13 +221,13 @@ body {
 
 .contact h1 {
     color: #1a3a5f;
-    font-size: 45px;
+    font-size: clamp(28px, 8vw, 45px);
     margin-bottom: 20px;
     text-align: center;
 }
 
 .contact p {
-    font-size: 18px;
+    font-size: clamp(16px, 4vw, 18px);
     color: #4a5568;
     line-height: 1.6;
     margin-bottom: 30px;
@@ -233,7 +241,7 @@ body {
     display: inline-block;
     margin: 40px 0 20px 0;
     padding-bottom: 5px;
-    font-size: 26px;
+    font-size: clamp(20px, 5vw, 26px);
 }
 
 /* Liste des contacts */
@@ -246,10 +254,12 @@ body {
     align-items: center;
     background-color: #f8f9fa;
     margin-bottom: 15px;
-    padding: 20px;
+    padding: clamp(15px, 3vw, 20px);
     border-radius: 12px;
     border-left: 6px solid #1a3a5f;
     transition: transform 0.2s ease;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .contact ul li:hover {
@@ -261,41 +271,45 @@ body {
 .contact ul li img {
     width: 40px;
     height: 40px;
-    margin-right: 25px;
+    margin-right: 0;
     /* Filtre pour harmoniser les icônes si elles sont noires à l'origine */
     opacity: 0.8;
+    flex-shrink: 0;
 }
 
 /* Mise en valeur des numéros (119, 17, etc.) */
 .contact ul li strong {
     color: #4c51bf;
-    font-size: 24px;
+    font-size: clamp(18px, 5vw, 24px);
     margin-right: 10px;
 }
 
 .contact ul li p {
     margin-bottom: 0; /* Annule la marge du paragraphe pour l'alignement */
     text-align: left;
-    font-size: 18px;
+    font-size: clamp(14px, 4vw, 18px);
+    flex: 1;
+    min-width: 200px;
 }
 
 /* --- STYLE QUIZZ --- */
 .quizz-container {
     max-width: 800px;
-    margin: 40px auto;
+    margin: clamp(20px, 5vw, 40px) auto;
     text-align: center;
+    padding: clamp(10px, 3vw, 20px);
 }
 
 #quiz-box {
     background-color: white;
-    padding: 40px;
+    padding: clamp(20px, 5vw, 40px);
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     border-top: 10px solid #1a3a5f;
 }
 
 #question-text {
-    font-size: 24px;
+    font-size: clamp(18px, 5vw, 24px);
     color: #4a5568;
     margin-bottom: 30px;
     font-weight: bold;
@@ -304,9 +318,9 @@ body {
 .btn-quiz {
     display: block;
     width: 100%;
-    padding: 15px;
+    padding: clamp(12px, 3vw, 15px);
     margin: 10px 0;
-    font-size: 18px;
+    font-size: clamp(14px, 3vw, 18px);
     background-color: #edf2f7;
     border: 2px solid #2c7a7b;
     border-radius: 10px;
@@ -321,13 +335,14 @@ body {
 }
 
 .btn-restart {
-    padding: 15px 30px;
+    padding: clamp(12px, 3vw, 15px) clamp(20px, 5vw, 30px);
     background-color: #1a3a5f;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    font-size: clamp(14px, 3vw, 16px);
 }
 
 .hide {
@@ -348,6 +363,7 @@ body {
 #correction-list h3 {
     color: #1a3a5f;
     margin-bottom: 20px;
+    font-size: clamp(18px, 4vw, 22px);
 }
 
 .correction-item {
@@ -355,7 +371,7 @@ body {
 }
 
 .correction-item p {
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
     margin: 5px 0;
 }
 
@@ -374,4 +390,227 @@ body {
     border: 0;
     border-top: 1px solid #e2e8f0;
     margin-top: 15px;
+}
+
+/* --- MEDIA QUERIES RESPONSIVE --- */
+
+/* Petits écrans (mobile) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .navbar {
+        padding: 10px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .navbar h1 {
+        font-size: 20px;
+    }
+    
+    .navlink {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .navlink a {
+        font-size: 14px;
+    }
+    
+    .image-header {
+        height: 250px;
+    }
+    
+    .container {
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .box {
+        min-width: 100%;
+    }
+    
+    .liste_cons li {
+        margin-bottom: 30px;
+    }
+    
+    .container-legal {
+        padding: 0 15px;
+    }
+    
+    .article-loi {
+        padding: 20px;
+    }
+    
+    .legal-section {
+        padding: 15px;
+    }
+    
+    .definition {
+        margin: 20px auto;
+    }
+    
+    .contact {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    
+    .contact ul li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    
+    .contact ul li img {
+        margin-bottom: 10px;
+    }
+    
+    .quizz-container {
+        padding: 15px;
+    }
+    
+    #quiz-box {
+        padding: 20px;
+    }
+    
+    .liste {
+        margin-bottom: 20px;
+    }
+}
+
+/* Très petits écrans (mobile petits) */
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 18px;
+    }
+    
+    .navlink {
+        gap: 8px;
+    }
+    
+    .navlink a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    
+    #h1 {
+        font-size: 24px;
+        margin: 15px;
+    }
+    
+    .image-header {
+        height: 180px;
+    }
+    
+    .container {
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .definition {
+        font-size: 16px;
+        padding: 15px;
+        margin: 15px auto;
+    }
+    
+    .consentement {
+        margin-left: 15px;
+    }
+    
+    .consentement h2 {
+        font-size: 20px;
+    }
+    
+    .consentement p {
+        font-size: 14px;
+    }
+    
+    .article-loi {
+        padding: 15px;
+        border-left: 6px solid #4c51bf;
+    }
+    
+    .article-loi blockquote {
+        font-size: 14px;
+    }
+    
+    .legal-section h3 {
+        font-size: 18px;
+    }
+    
+    .legal-section p {
+        font-size: 14px;
+    }
+    
+    .container-legal {
+        padding: 0 10px;
+    }
+    
+    .contact h1 {
+        font-size: 22px;
+    }
+    
+    .contact p {
+        font-size: 14px;
+    }
+    
+    .contact h2 {
+        font-size: 18px;
+    }
+    
+    .contact ul li {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .contact ul li img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .contact ul li strong {
+        font-size: 18px;
+    }
+    
+    .contact ul li p {
+        font-size: 13px;
+    }
+    
+    #question-text {
+        font-size: 16px;
+    }
+    
+    .btn-quiz {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .chiffre li {
+        font-size: 16px;
+        margin: 12px;
+        padding: 12px;
+    }
+}
+
+/* Tablettes et écrans moyens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 12px 30px;
+    }
+    
+    .navlink {
+        gap: 25px;
+    }
+    
+    .container {
+        gap: 40px;
+    }
+    
+    .box {
+        min-width: 250px;
+    }
 }
