@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsentEdu - Quizz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>ConsentEdu</h1>
+            <ul class="navlink">
+                <li><a href="index.html">Definitions</a></li>
+                <li><a href="cadre_legal.html">Cadre Legal</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="quizz.html">Quizz</a></li>
+            </ul>  
+        </nav>
+    </header>
+
+    <div class="quizz-container">
+        <h1 id="h1">Testez vos connaissances</h1>
+        
+        <div id="quiz-box">
+            <div id="question-container">
+                <p id="question-text">Chargement de la question...</p>
+                <div id="answer-buttons">
+                    </div>
+            </div>
+
+            <div id="result-container" class="hide">
+                <h2>Quizz terminé !</h2>
+                <div class="score-badge">
+                    <p id="score-text"></p>
+                </div>
+                
+                <div id="correction-list">
+                    </div>
+
+                <button onclick="location.reload()" class="btn-restart">Recommencer le quizz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="quizz.js"></script>
+</body>
+</html>
